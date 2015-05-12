@@ -1,0 +1,13 @@
+#Mac file(s) ignores
+.DS_Store
+
+#eclipse ignores
+.metadata
+.classpath
+.project
+.settings
+.recommenders
+
+#eclipse generated files
+Compiler/bin
+Parser/bin
