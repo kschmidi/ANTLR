@@ -6,17 +6,17 @@ In this Project I am going to checkout ANTLR for JAVA. I don't know where this P
 1. Create the grammar for simple calculations (+,-,*,/) and a Visitor for the Abstract Parse Tree of the calculations
 
 ***By the way:
-<br />This Project is inspired by [Let's build a Compiler](http://25.io/smaller/) from [Yankees Code Academy](http://25.io/smaller/) on [Youtube](http://25.io/smaller/).***)
+<br />This Project is inspired by [Let's build a Compiler](https://www.youtube.com/playlist?list=PLOfFbVTfT2vbJ9qiw_6fWwBAmJAYV4iUm) from [Yankee's Coding workshops](https://www.youtube.com/user/yankeecoding) on [Youtube](http://youtube.com).***)
 
 ##What is ANTLR
-If you don't know what ANTLR is click [here](http://25.io/smaller/). 
+If you don't know what ANTLR is click [here](http://www.antlr.org). 
 
-There is also a Link to download the actual [antlr.jar](http://25.io/smaller/). In my case this is version 4.5.
+There is also a Link to download the actual [antlr.jar](http://www.antlr.org/download.html). In my case this is version 4.5.
 
-There is also a [Tutorial](http://25.io/smaller/) on the Website.
+There is also a small beginner [Tutorial](https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4) on the Website.
 
 ##Setup
-As ou can see there are two Projects the Parser and the Compiler. 
+As ou can see there are two Projects. The Parser and the Compiler. 
 
 The Compiler has in its references the Parser project.
 
