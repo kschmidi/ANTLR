@@ -46,5 +46,7 @@ In the Project Parser in the subfolder lib is the Antlr .jar which is needed in 
 	
 Now the antlr.jar can be used in the Project Compiler.
 
+To use the jasmin.jar do the last step again, but for the jasmin.jar
+
 **Your now good to go!**
 
