@@ -1,6 +1,5 @@
 // Generated from grammar/Demo.g4 by ANTLR 4.5
 package ch.kschmidi.antlr.parser;
-
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -18,20 +17,20 @@ public class DemoLexer extends Lexer {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, ZAHL=2;
+		T__0=1, NUMBER=2;
 	public static String[] modeNames = {
 		"DEFAULT_MODE"
 	};
 
 	public static final String[] ruleNames = {
-		"T__0", "ZAHL"
+		"T__0", "NUMBER"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
 		null, "'+'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, "ZAHL"
+		null, null, "NUMBER"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 

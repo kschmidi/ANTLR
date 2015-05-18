@@ -1,6 +1,5 @@
 // Generated from grammar/Demo.g4 by ANTLR 4.5
 package ch.kschmidi.antlr.parser;
-
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -12,9 +11,17 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface DemoVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link DemoParser#addition}.
+	 * Visit a parse tree produced by the {@code Number}
+	 * labeled alternative in {@link DemoParser#addition}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAddition(DemoParser.AdditionContext ctx);
+	T visitNumber(DemoParser.NumberContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Plus}
+	 * labeled alternative in {@link DemoParser#addition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPlus(DemoParser.PlusContext ctx);
 }

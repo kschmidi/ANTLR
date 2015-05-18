@@ -1,6 +1,7 @@
 grammar Demo;
 
-addition: addition '+' ZAHL
-		| ZAHL;
+addition: left=addition '+' right=NUMBER #Plus
+		| number=NUMBER #Number
+		;
 
-ZAHL: [0-9]+;
+NUMBER: [0-9]+;
