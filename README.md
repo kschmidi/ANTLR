@@ -3,17 +3,35 @@ In this Project I am going to checkout ANTLR for JAVA. I don't know where this P
 
 ***The goal(s):***
 
-1. Create the grammar for simple calculations (+,-,*,/) and a Visitor for the Abstract Parse Tree of the calculations
+1. Automated Tests hinzufügen
+2. Create the grammar for simple calculations (+,-,*,/) and a Visitor for the Abstract Parse Tree of the calculations
 
 ***By the way:
 <br />This Project is inspired by [Let's build a Compiler](https://www.youtube.com/playlist?list=PLOfFbVTfT2vbJ9qiw_6fWwBAmJAYV4iUm) from [Yankee's Coding workshops](https://www.youtube.com/user/yankeecoding) on [Youtube](http://youtube.com).***
 
-##What is ANTLR
+##Used Technologies
+- [eclipse](https://eclipse.org)
+- [antlr.jar](http://www.antlr.org/download.html)
+- [jasmin](http://jasmin.sourceforge.net)
+- [junit](http://junit.org)
+- [junit-dataProvider](https://github.com/TNG/junit-dataprovider)
+
+##What is ANTLR??
 If you don't know what ANTLR is click [here](http://www.antlr.org). 
 
 There is also a Link to download the actual [antlr.jar](http://www.antlr.org/download.html). In my case this is version 4.5.
 
 There is also a small beginner [Tutorial](https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4) on the Website.
+
+##What is Jasmin??
+If you don't know what Jasmin is click [here](http://jasmin.sourceforge.net)
+
+There is also a Link to download the actual [jasmin.jar](http://sourceforge.net/projects/jasmin/files/). In my case this is version 2.4.
+
+##What does the junit-dataProvider??
+If you don't know what the junit-dataProvider is click [here](https://github.com/TNG/junit-dataprovider).
+
+It is a very cool Tool to add Parameters to a @Test Method.
 
 ##Setup
 As ou can see there are two Projects. The Parser and the Compiler. 
