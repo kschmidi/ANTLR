@@ -3,7 +3,7 @@ In this Project I am going to checkout ANTLR for JAVA. I don't know where this P
 
 ***The goal(s):***
 
-1. Automated Tests hinzufügen
+1. Add Automated Tests
 2. Create the grammar for simple calculations (+,-,*,/) and a Visitor for the Abstract Parse Tree of the calculations
 
 ***By the way:
