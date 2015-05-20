@@ -1,4 +1,4 @@
-// Generated from grammar/Demo.g4 by ANTLR 4.5
+// Generated from Demo.g4 by ANTLR 4.5
 package ch.kschmidi.antlr.parser;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
