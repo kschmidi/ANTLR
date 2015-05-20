@@ -60,15 +60,14 @@ public class CompilerTest {
 
 	@Test
 	@UseDataProvider("provide_code_expectedText")
-	public void test(String code, String expectedText) throws IOException,
-			Exception {
+	public void test(String code, String expectedText) throws IOException, Exception {
 		// execution
 		String actualOutput = compileAndRun(code);
 
 		// evaluation
 		assertEquals(expectedText, actualOutput);
 	}
-	
+
 	private String compileAndRun(String code) throws IOException, Exception {
 		code = Main.compile(new ANTLRInputStream(code));
 		ClassFile classFile = new ClassFile();
@@ -79,7 +78,8 @@ public class CompilerTest {
 	}
 
 	private String runJavaClass(Path dir, String className) throws IOException {
-		Process process = Runtime.getRuntime().exec(new String[] { "java", "-cp", dir.toString(), className });
+		Process process = Runtime.getRuntime().exec(
+				new String[] { "java", "-cp", dir.toString(), className });
 		try (InputStream in = process.getInputStream()) {
 			return new Scanner(in).useDelimiter("\\A").next();
 		}
