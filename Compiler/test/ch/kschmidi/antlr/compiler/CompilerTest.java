@@ -52,7 +52,8 @@ public class CompilerTest {
 		//@formatter:off
 		return new Object[][] { 
 				{ "1+2", "3" }, 
-				{ "20+22", "42" } 
+				{ "20+22", "42" }, 
+				{ "1+2+3", "6" }
 			   };
 		//@formatter:on
 	}
@@ -65,9 +66,16 @@ public class CompilerTest {
 		String actualOutput = compileAndRun(code);
 
 		// evaluation
+		System.out.print("Expected:");
+		System.out.print(expectedText + "\t");
+		System.out.println(expectedText.length());
+		System.out.print("Actual:");
+		System.out.println(actualOutput+ "\t");
+		System.out.println(expectedText.length());
+		System.out.println("Comparision: " + expectedText.compareTo(actualOutput));
 		assertEquals(expectedText, actualOutput);
 	}
-
+	
 	private String compileAndRun(String code) throws IOException, Exception {
 		code = Main.compile(new ANTLRInputStream(code));
 		ClassFile classFile = new ClassFile();
@@ -78,10 +86,8 @@ public class CompilerTest {
 	}
 
 	private String runJavaClass(Path dir, String className) throws IOException {
-		Process process = Runtime.getRuntime().exec(
-				new String[] { "java", "-cp", dir.toString(), className });
+		Process process = Runtime.getRuntime().exec(new String[] { "java", "-cp", dir.toString(), className });
 		try (InputStream in = process.getInputStream()) {
-			// TODO here is something wrong
 			return new Scanner(in).useDelimiter("\\A").next();
 		}
 	}
