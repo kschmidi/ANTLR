@@ -50,3 +50,101 @@ To use the jasmin.jar do the last step again, but for the jasmin.jar and without
 
 **Your now good to go!**
 
+##First steps
+###Grammar
+At first we start with creating a grammar for our language. I called it Demo.g4 (its in the gammar folder). Of course you can name it what ever you want as long it has the .g4 postfix. 
+
+At the beginning it may looks like this:
+
+	grammar Demo;
+
+	addition: left=addition '+' right=NUMBER #Plus
+			| number=NUMBER #Number
+			;
+
+	NUMBER: [0-9]+;
+
+At first we define that this is going to be the grammar of Demo (or whatever you named it). Then it is followed with rules. The left=addition means just that addition is labeled left in the Visitor as same as for #Plus, which is going to be more readable in the Visitor and explained later. 
+
+###Generate the Parser from the grammar
+Now we can generate, with the help of the antlr.jar, the Parser Project.
+
+Open the terminal change to the directory of the grammar and use the following command:
+
+	java -jar ../lib/antlr-4.5-complete.jar -package ch.kschmidi.antlr.parser -o ../src/ch/kschmidi/antlr/parser -no-listener -visitor Demo.g4
+	
+This will generate the Parser.
+
+***Note: the path may differ from your projects***
+
+###Create the Visitor for the Compiler
+The Visitor helps us to generate the jasmin file by visiting the abstract syntax tree. By every leaf or node it visits it returns a String, wich is added to the jasmin file.
+
+In my case it looks like this:
+
+	public class MyVisitor extends DemoBaseVisitor<String> {
+
+		@Override
+		public String visitPlus(PlusContext ctx) {
+			return visitChildren(ctx) + "\nldc " + ctx.right.getText() + "\n" + "iadd";
+		}
+
+		@Override
+		public String visitNumber(NumberContext ctx) {
+			return "ldc " + ctx.number.getText();
+		}
+
+		@Override
+		protected String aggregateResult(String aggregate, String nextResult) {
+			if (aggregate == null) {
+				return nextResult;
+			}
+			if (nextResult == null) {
+				return aggregate;
+			}
+			return aggregate + "\n" + nextResult;
+		}
+		
+	}
+
+###Get it all together
+Now we got all. We just have to get it all to work with eachother, wich is done in the main. 
+
+	ANTLRInputStream input = new ANTLRFileStream("resources/code.demo");
+	DemoLexer lexer = new DemoLexer(input);
+	CommonTokenStream tokens = new CommonTokenStream(lexer);
+	DemoParser parser = new DemoParser(tokens);
+		
+	ParseTree tree = parser.addition();
+	new MyVisitor().visit(tree)
+	
+Now the Visitor is used to create the jasmin file, which need a bit more than just the information in the abstract parse tree.
+
+This could be done like this:
+
+	createJasminFile(new MyVisitor().visit(tree));
+	
+Where the createJasminFile methiod looks like this:
+	
+	private static String createJasminFile(String instructions) {
+		return ".class public HelloWorld\n"
+				+ ".super java/lang/Object\n"
+				+ "\n"
+				+ ".method public static main([Ljava/lang/String;)V\n"
+				+ "   .limit stack 100\n"
+				+ "   .limit locals 100\n"
+				+ "\n"
+				+ "   getstatic java/lang/System/out Ljava/io/PrintStream;\n"
+				+ instructions + "\n"
+				+ "   invokevirtual java/io/PrintStream/println(I)V\n"
+				+ "return\n"
+				+ "\n"
+				+ ".end method";
+	}
+
+***Done!***
+	
+##Further steps
+Now we can improve the grammar and do the first steps again to improve our language.
+
+#Have fun!
