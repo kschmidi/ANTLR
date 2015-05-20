@@ -51,9 +51,9 @@ public class CompilerTest {
 	public static Object[][] provide_code_expectedText() {
 		//@formatter:off
 		return new Object[][] { 
-				{ "1+2", "3" }, 
-				{ "20+22", "42" }, 
-				{ "1+2+3", "6" }
+				{ "1+2", "3\n" }, 
+				{ "20+22", "42\n" }, 
+				{ "1+2+3", "6\n" }
 			   };
 		//@formatter:on
 	}
@@ -66,13 +66,6 @@ public class CompilerTest {
 		String actualOutput = compileAndRun(code);
 
 		// evaluation
-		System.out.print("Expected:");
-		System.out.print(expectedText + "\t");
-		System.out.println(expectedText.length());
-		System.out.print("Actual:");
-		System.out.println(actualOutput+ "\t");
-		System.out.println(expectedText.length());
-		System.out.println("Comparision: " + expectedText.compareTo(actualOutput));
 		assertEquals(expectedText, actualOutput);
 	}
 	
