@@ -52,7 +52,7 @@ To use the jasmin.jar do the last step again, but for the jasmin.jar and without
 
 ##First steps
 ###Grammar
-At first we start with creating a grammar for our language. I called it Demo.g4 (its in the gammar folder). Of course you can name it what ever you want as long it has the .g4 postfix. 
+At first we start with creating a grammar for our language. I called it Demo.g4 (it's in the gammar folder). Of course you can name it what ever you want as long it has the .g4 postfix. 
 
 At the beginning it may looks like this:
 
@@ -124,7 +124,7 @@ This could be done like this:
 
 	createJasminFile(new MyVisitor().visit(tree));
 	
-Where the createJasminFile methiod looks like this:
+Where the createJasminFile method looks like this:
 	
 	private static String createJasminFile(String instructions) {
 		return ".class public HelloWorld\n"
@@ -147,4 +147,4 @@ Where the createJasminFile methiod looks like this:
 ##Further steps
 Now we can improve the grammar and do the first steps again to improve our language.
 
-#Have fun!
+#Now have fun!
