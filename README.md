@@ -15,23 +15,43 @@ In this Project I am going to checkout ANTLR for JAVA. I don't know where this P
 - [jasmin](http://jasmin.sourceforge.net)
 - [junit](http://junit.org)
 - [junit-dataProvider](https://github.com/TNG/junit-dataprovider)
+- [TM Terminal Plugin for Eclipse](http://marketplace.eclipse.org/content/tm-terminal)
 
 ##What is ANTLR??
 If you don't know what ANTLR is click [here](http://www.antlr.org). 
 
-There is also a Link to download the actual [antlr.jar](http://www.antlr.org/download.html). In my case this is version 4.5.
+There is also a Link to download the actual [antlr.jar](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.antlr%22). In my case this is version 4.5.
 
 There is also a small beginner [Tutorial](https://theantlrguy.atlassian.net/wiki/display/ANTLR4/Getting+Started+with+ANTLR+v4) on the Website.
 
 ##What is Jasmin??
 If you don't know what Jasmin is click [here](http://jasmin.sourceforge.net)
 
-There is also a Link to download the actual [jasmin.jar](http://sourceforge.net/projects/jasmin/files/). In my case this is version 2.4.
+There is also a Link to download the actual [jasmin.jar](http://search.maven.org/#search%7Cga%7C1%7Cjasmin). In my case this is version 2.4.
 
 ##What does the junit-dataProvider??
 If you don't know what the junit-dataProvider is click [here](https://github.com/TNG/junit-dataprovider).
 
 It is a very cool Tool to add Parameters to a @Test Method.
+
+##TM Terminal Plugin
+If you don't know what the TM Terminal Plugin is click [here](http://marketplace.eclipse.org/content/tm-terminal).
+
+It allows you to use the terminal in eclipse, which makes it easier to run terminal commands. 
+
+To use all commands you have to set the Path. I created a script which echos me my path and reset the eclipse terminal path with my path
+
+My script:
+	
+	#!/bin/bash
+
+	echo $PATH:~/bin:/usr/local/sbin
+	
+Maybe you need to add more useful paths to it separated with ":".
+
+Then you can run this command to set the path in the eclipse terminal:
+	
+	PATH=$(your_script_name)
 
 ##Setup
 As ou can see there are two Projects. The Parser and the Compiler. 
