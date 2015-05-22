@@ -3,8 +3,12 @@ In this Project I am going to checkout ANTLR for JAVA. I don't know where this P
 
 ***The goal(s):***
 
-1. Add Automated Tests
-2. Create the grammar for simple calculations (+,-,*,/) and a Visitor for the Abstract Parse Tree of the calculations
+1. Create the grammar, so simple or multiple additions can be done
+1. Add Automated Tests, so I can be sure everything works, when changing something
+3. Improve the grammar for simple calculations (+,-,*,/) without brackets
+4. Improve the grammar to use brackets
+5. Variables can now be used
+6. Functions can now be made
 
 ***By the way:
 <br />This Project is inspired by [Let's build a Compiler](https://www.youtube.com/playlist?list=PLOfFbVTfT2vbJ9qiw_6fWwBAmJAYV4iUm) from [Yankee's Coding workshops](https://www.youtube.com/user/yankeecoding) on [Youtube](http://youtube.com).***
