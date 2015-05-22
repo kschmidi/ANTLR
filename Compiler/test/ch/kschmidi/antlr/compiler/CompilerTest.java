@@ -51,9 +51,31 @@ public class CompilerTest {
 	public static Object[][] provide_code_expectedText() {
 		//@formatter:off
 		return new Object[][] { 
-				{ "1+2", "3\n" }, 
-				{ "20+22", "42\n" }, 
-				{ "1+2+3", "6\n" }
+				// Additions
+				{ "1+2", "3" + System.lineSeparator() }, 
+				{ "20+22", "42" + System.lineSeparator() }, 
+				{ "1+2+3", "6" + System.lineSeparator() },
+				
+				// Subtractions
+				{ "5-1", "4" + System.lineSeparator() },
+				{ "42-5", "37" + System.lineSeparator() },
+				{ "42-16-5", "21" + System.lineSeparator() },
+				
+				// Mix of subtractions and additions
+				{"9+5-3", "11" + System.lineSeparator()},
+				{"7-4+8", "11" + System.lineSeparator()},
+				{"42+56-9", "89" + System.lineSeparator()},
+				
+				// Multiplications
+				{"3*2", "6" + System.lineSeparator()},
+				{"12*34", "408" + System.lineSeparator()},
+				{"1*4*6", "24" + System.lineSeparator()},
+				
+				// Mix of multiplications and subtractions and additions
+				{"1+2*5", "11" + System.lineSeparator()},
+				{"1+2*5-11", "0" + System.lineSeparator()},
+				{"15*1-15/3+4", "14" + System.lineSeparator()},
+				{"20/4-3*2+36/6", "5" + System.lineSeparator()}
 			   };
 		//@formatter:on
 	}

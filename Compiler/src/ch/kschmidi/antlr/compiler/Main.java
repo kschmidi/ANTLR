@@ -20,7 +20,7 @@ public class Main {
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		DemoParser parser = new DemoParser(tokens);
 
-		ParseTree tree = parser.addition();
+		ParseTree tree = parser.program();
 		return createJasminFile(new MyVisitor().visit(tree));
 	}
 
