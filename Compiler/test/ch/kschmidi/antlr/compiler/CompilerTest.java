@@ -52,35 +52,35 @@ public class CompilerTest {
 		//@formatter:off
 		return new Object[][] { 
 				// Additions
-				{ "1+2", "3" + System.lineSeparator() }, 
-				{ "20+22", "42" + System.lineSeparator() }, 
-				{ "1+2+3", "6" + System.lineSeparator() },
+				createTestArrayString("1+2", "3"),
+				createTestArrayString("20+22", "42"),
+				createTestArrayString("1+2+3", "6"),
 				
 				// Subtractions
-				{ "5-1", "4" + System.lineSeparator() },
-				{ "42-5", "37" + System.lineSeparator() },
-				{ "42-16-5", "21" + System.lineSeparator() },
+				createTestArrayString("5-1", "4"),
+				createTestArrayString("42-5", "37"),
+				createTestArrayString("42-16-5", "21"),
 				
 				// Mix of subtractions and additions
-				{ "9+5-3", "11" + System.lineSeparator() },
-				{ "7-4+8", "11" + System.lineSeparator() },
-				{ "42+56-9", "89" + System.lineSeparator() },
+				createTestArrayString("9+5-3", "11"),
+				createTestArrayString("7-4+8", "11"),
+				createTestArrayString("42+56-9", "89"),
 				
 				// Multiplications
-				{ "3*2", "6" + System.lineSeparator() },
-				{ "12*34", "408" + System.lineSeparator() },
-				{ "1*4*6", "24" + System.lineSeparator() },
+				createTestArrayString("3*2", "6"),
+				createTestArrayString("12*34", "408"),
+				createTestArrayString("1*4*6", "24"),
 				
 				// Mix of multiplications and subtractions and additions
-				{ "1+2*5", "11" + System.lineSeparator() },
-				{ "1+2*5-11", "0" + System.lineSeparator() },
-				{ "15*1-15/3+4", "14" + System.lineSeparator() },
-				{ "20/4-3*2+36/6", "5" + System.lineSeparator() },
+				createTestArrayString("1+2*5", "11"),
+				createTestArrayString("1+2*5-11", "0"),
+				createTestArrayString("15*1-15/3+4", "14"),
+				createTestArrayString("20/4-3*2+36/6", "5"),
 				
 				// Whitespaces tabs and breaklines
-				{ "1 + 2", "3" + System.lineSeparator() },
-				{ "4\n+\n5", "9" + System.lineSeparator() },
-				{ "6 \n / \n 3", "2" + System.lineSeparator() }
+				createTestArrayString("1 + 2", "3"),
+				createTestArrayString("4\n+\n5", "9"),
+				createTestArrayString("6 \n / \n 3", "2")
 				
 				// Brackets
 			   };
@@ -112,6 +112,10 @@ public class CompilerTest {
 		try (InputStream in = process.getInputStream()) {
 			return new Scanner(in).useDelimiter("\\A").next();
 		}
+	}
+	
+	private static String[] createTestArrayString(String code, String expected){
+		return new String[] { code, expected + System.lineSeparator() };
 	}
 
 }
