@@ -10,3 +10,5 @@ expression: left=expression '/' right=expression #Division
 		  ;
 
 NUMBER: [0-9]+;
+
+WHITESPACE: [ \t\n\r]+ -> skip;
