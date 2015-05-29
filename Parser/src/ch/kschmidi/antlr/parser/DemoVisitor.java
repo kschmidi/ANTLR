@@ -24,6 +24,13 @@ public interface DemoVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMultiplication(DemoParser.MultiplicationContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Brackets}
+	 * labeled alternative in {@link DemoParser#expression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBrackets(DemoParser.BracketsContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Number}
 	 * labeled alternative in {@link DemoParser#expression}.
 	 * @param ctx the parse tree

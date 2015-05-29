@@ -2,7 +2,8 @@ grammar Demo;
 
 program: expression+ ;
 
-expression: left=expression '/' right=expression #Division
+expression: '(' expression ')'					 #Brackets
+		  | left=expression '/' right=expression #Division
 		  | left=expression '*' right=expression #Multiplication
 		  | left=expression '-' right=expression #Minus
 		  | left=expression '+' right=expression #Plus

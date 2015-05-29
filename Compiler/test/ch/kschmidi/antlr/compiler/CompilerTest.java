@@ -80,9 +80,12 @@ public class CompilerTest {
 				// Whitespaces tabs and breaklines
 				createTestArrayString("1 + 2", "3"),
 				createTestArrayString("4\n+\n5", "9"),
-				createTestArrayString("6 \n / \n 3", "2")
+				createTestArrayString("6 \n / \n 3", "2"),
 				
 				// Brackets
+				createTestArrayString("2*(3+7)", "20"),
+				createTestArrayString("(7-2)/5", "1"),
+				createTestArrayString("36-(7+2)*3", "9")
 			   };
 		//@formatter:on
 	}

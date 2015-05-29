@@ -1,6 +1,7 @@
 package ch.kschmidi.antlr.compiler;
 
 import ch.kschmidi.antlr.parser.DemoBaseVisitor;
+import ch.kschmidi.antlr.parser.DemoParser.BracketsContext;
 import ch.kschmidi.antlr.parser.DemoParser.DivisionContext;
 import ch.kschmidi.antlr.parser.DemoParser.MinusContext;
 import ch.kschmidi.antlr.parser.DemoParser.MultiplicationContext;
@@ -8,6 +9,11 @@ import ch.kschmidi.antlr.parser.DemoParser.NumberContext;
 import ch.kschmidi.antlr.parser.DemoParser.PlusContext;
 
 public class MyVisitor extends DemoBaseVisitor<String> {
+	
+	@Override
+	public String visitBrackets(BracketsContext ctx) {
+		return visitChildren(ctx);
+	}
 	
 	@Override
 	public String visitDivision(DivisionContext ctx) {
