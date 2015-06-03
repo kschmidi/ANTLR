@@ -3,10 +3,10 @@ In this Project I am going to checkout ANTLR for JAVA. I don't know where this P
 
 ***The goal(s):***
 
-1. Create the grammar, so simple or multiple additions can be done
-1. Add Automated Tests, so I can be sure everything works, when changing something
-3. Improve the grammar for simple calculations (+,-,*,/) without brackets
-4. Improve the grammar to use brackets
+1. Create the grammar, so simple or multiple additions can be done (check)
+1. Add Automated Tests, so I can be sure everything works, when changing something (check)
+3. Improve the grammar for simple calculations (+,-,*,/) without brackets (check)
+4. Improve the grammar to use brackets (check)
 5. Variables can now be used
 6. Functions can now be made
 
