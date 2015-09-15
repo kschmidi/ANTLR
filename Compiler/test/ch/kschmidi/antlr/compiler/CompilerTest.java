@@ -85,7 +85,12 @@ public class CompilerTest {
 				// Brackets
 				createTestArrayString("2*(3+7)", "20"),
 				createTestArrayString("(7-2)/5", "1"),
-				createTestArrayString("36-(7+2)*3", "9")
+				createTestArrayString("36-(7+2)*3", "9"),
+				
+				// Variables
+				createTestArrayString("int x;", ""),
+				createTestArrayString("int x; x = 3;", ""),
+				createTestArrayString("int x = 3;", "")
 			   };
 		//@formatter:on
 	}

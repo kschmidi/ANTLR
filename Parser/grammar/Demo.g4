@@ -1,6 +1,10 @@
 grammar Demo;
 
-program: expression+ ;
+program: expression+ 
+	   | varDecl ';'
+	   | varAssign ';'
+	   | varInit ';'
+	   ;
 
 expression: '(' expression ')'					 #Brackets
 		  | left=expression '/' right=expression #Division
@@ -8,8 +12,13 @@ expression: '(' expression ')'					 #Brackets
 		  | left=expression '-' right=expression #Minus
 		  | left=expression '+' right=expression #Plus
 		  | number=NUMBER #Number
+		  | varName=IDENTIFIER #Variable
 		  ;
 
-NUMBER: [0-9]+;
+varDecl: 'int' varName=IDENTIFIER ;
+varAssign: varName=IDENTIFIER '=' expr=expression ;
+varInit: 'int' varName=IDENTIFIER '=' expr=expression ;
 
-WHITESPACE: [ \t\n\r]+ -> skip;
+NUMBER: [0-9]+ ;
+IDENTIFIER: [a-z][a-zA-Z0-9]* ;
+WHITESPACE: [ \t\n\r]+ -> skip ;
